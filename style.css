@@ -1,0 +1,42 @@
+body {
+    background-color:antiquewhite;
+}
+
+
+#header {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#header h1 {
+    font-size: 60px;
+}
+
+#header h2 {
+    font-size: 20px;
+}
+
+.input {
+    position: absolute;
+    font-size: 18px;
+    text-align: center;
+    border-style: solid;
+    float: left;
+    width: 50%;
+    border-bottom: 0;
+    border-top: 0;
+    border-left: 0;
+    height: 100%;
+}
+
+.output {
+    font-size: 18px;
+    text-align: center;
+    border-style: solid;
+    float: right;
+    width: 50%;
+    border-bottom: 0;
+    border-top: 0;
+    border-right: 0;
+    height: 100%;
+}
