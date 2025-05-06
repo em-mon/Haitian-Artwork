@@ -2,17 +2,22 @@
     <head>
         <title>Haitian Artwork Analyzer</title>
         <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Poiret+One&display=swap" rel="stylesheet">
     </head>
     <body>
         <section id="header">
             <div>
                 <h1>Haitian Artwork Analyzer</h1>
             </div>
-            <div>
+            <div class="quote">
                 <h2>“Understanding the meaning behind the colors and motifs used by Haitian 
-                    artists is essential to appreciating these masterpieces.” -Understanding 
-                    Symbolism in Haitian Art: Decoding Colors and Motifs, Myriam Nader 
-                    Haitian Art Gallery </h2>
+                    artists is essential to appreciating these masterpieces.” </h2>
+                <h4>- Understanding Symbolism in Haitian Art: Decoding Colors and Motifs,
+                    Myriam Nader Haitian Art Gallery</h4>
+            </div>
+            <div class="desc">
                 <h3>This Haitian Artwork Analyzer is significant because it offers a 
                     tool to deepen understanding of Haitian culture through the lens of its art. 
                     Haitian art is a living archive of the nation's history, spirituality, and 
@@ -23,8 +28,10 @@
                     crucial because it challenges long-standing stereotypes that depict 
                     Haiti solely through poverty, violence, or political instability. Historically, 
                     Vodou has been misrepresented as sinister, and Haitian culture has been 
-                    simplified or exoticized for Western audiences. Art fights these distortions
-                    by presenting Haiti on its own terms: vibrant, complex, and proud.</h3>
+                    simplified or exoticized for Western audiences. 
+                    <br><br>
+                    <u>Art fights these distortions by presenting Haiti on its own terms: vibrant, 
+                    complex, and proud.</u></h3>
             </div>
         </section>
         <section id="inputSection">
@@ -35,7 +42,7 @@
                     <li>Wait for results to load on the right</li>
                     <li>Read your interpretation!</li>
                 </ol>
-                <button>
+                <button onclick="runColorExtractor()">
                     Upload 
                 </button>
             </div>
@@ -45,5 +52,6 @@
                 <h1>Loading...</h1>
             </div>
         </section>
+    <script src="script.js"></script>
     </body>
 </html>

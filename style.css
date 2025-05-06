@@ -1,5 +1,5 @@
 body {
-    background-color:antiquewhite;
+    background-color: rgb(178, 211, 240);
 }
 
 
@@ -10,10 +10,34 @@ body {
 
 #header h1 {
     font-size: 60px;
+    font-family: "Kablammo", sans-serif;
+    margin-bottom: 10px;
 }
 
-#header h2 {
+#header .quote {
+    font-size: 18px;
+    font-family: "Poiret One", sans-serif;
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: aliceblue;
+    padding-top: 1px;
+    padding-bottom: 10px;
+    border-style:inherit;
+    border-radius: 25px;
+}
+
+#header .quote h4 {
+    font-size: 18px;
+    font-family: "Poiret One", sans-serif;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#header .desc {
     font-size: 20px;
+    font-family: "Poiret One", sans-serif;
+    max-width: 910px;
+    margin: 0 auto;
 }
 
 .input {
@@ -24,7 +48,6 @@ body {
     float: left;
     width: 50%;
     border-bottom: 0;
-    border-top: 0;
     border-left: 0;
     height: 100%;
 }
@@ -36,7 +59,6 @@ body {
     float: right;
     width: 50%;
     border-bottom: 0;
-    border-top: 0;
     border-right: 0;
     height: 100%;
 }
