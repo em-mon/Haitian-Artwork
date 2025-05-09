@@ -2,7 +2,6 @@ body {
     background-color: rgb(178, 211, 240);
 }
 
-
 #header {
     margin-top: 2rem;
     text-align: center;
@@ -50,6 +49,49 @@ body {
     border-bottom: 0;
     border-left: 0;
     height: 100%;
+}
+
+.images {
+    padding: 0;
+    border: none; 
+    background: none;
+    cursor: pointer;
+}
+
+button:hover img {
+    filter: brightness(75%);
+}
+
+button img {
+    border: solid;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+#exampleImg1 img {
+    width: 200px;
+    margin-right: 20px;
+    height: auto;
+    display: block;
+}
+
+#exampleImg2 img {
+    width: 225px;
+    height: auto;
+    display: block;
+}
+
+#exampleImg3 img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin-right: 20px;
+}
+
+#exampleImg4 img {
+    width: 225px;
+    height: auto;
+    display: block;
 }
 
 .output {

@@ -36,22 +36,33 @@
         </section>
         <section id="inputSection">
             <div class="input">
-                <ol>
-                    <li>Find a piece of Haitian art on the internet</li>
-                    <li>Upload the chosen image using the button on the lef</li>
-                    <li>Wait for results to load on the right</li>
-                    <li>Read your interpretation!</li>
-                </ol>
-                <button onclick="runColorExtractor()">
-                    Upload 
+                <h1>Upload an image of Haitian art you found...</h1>
+                <button> Upload here! </button>
+                <h1>...or try it with any one of these popular pieces!</h1>
+                <button id="exampleImg1" class="images">
+                    <img src="haitian_artwork1" alt="Haitian Painting" />
+                    <p>"Mother with Children", 2001 <br>Louisiane Saint Fleurant</p>
+                </button>
+                <button id="exampleImg2" class="images">
+                    <img src="haitian_artwork3.jpeg" alt="Haitian Painting" />
+                    <p>"Baron-la-mer, n.d.", 1988 <br>Andre Pierre</p>
+                </button>
+                <br>
+                <button id="exampleImg3" class="images">
+                    <img src="haitian_artwork2.jpeg" alt="Haitian Painting" />
+                    <p>"Untitled" <br>Frantz Zephirin</p>
+                </button>
+                <button id="exampleImg4" class="images">
+                    <img src="haitian_artwork4.png" alt="Haitian Painting" />
+                    <p>"Crucified Liberty", 1956 <br>Ulrick Jean-Pierre</p>
                 </button>
             </div>
         </section>
         <section>
             <div class="output">
-                <h1>Loading...</h1>
+                <h1>Wait for your results here:</h1>
             </div>
         </section>
-    <script src="script.js"></script>
+    <script type="module" src="scripts.js"></script>
     </body>
 </html>
