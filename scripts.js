@@ -12,6 +12,7 @@ async function analyzeImage(img) {
     
     try {
         const colors = await extractColors(img, options);
+        console.log(colors);
         const result = matchColors(colors);
         const outputDiv = document.getElementById("colorResults");
         outputDiv.innerHTML = "";
@@ -70,7 +71,7 @@ function matchColors(colorsArr) {
         const b = color.blue;
 
         // Check if red
-        if (r >= 150 && r <= 255 && g <= 160 && b <= 150) {
+        if (r >= 150 && r <= 255 && g <= 166 && b <= 155) {
             colorsToMeaning["Red"] = ["Red is a powerful color representing strength, passion, and vitality."];
         }
 
@@ -85,7 +86,7 @@ function matchColors(colorsArr) {
         }
 
         // Check if yellow
-        if (r >= 190 && r <= 255 && g >= 170 && g <= 255 && b <= 234) {
+        if (r >= 190 && r <= 255 && g >= 218 && g <= 255 && b <= 234) {
             colorsToMeaning["Yellow"] = ["Yellow signifies happiness, energy, and the sun. It also symbolizes wealth and prosperity."];
         }
 
