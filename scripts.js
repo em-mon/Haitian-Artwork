@@ -3,6 +3,15 @@ import { extractColors } from "https://cdn.skypack.dev/extract-colors";
 document.querySelectorAll(".images").forEach(button => {
     button.addEventListener("click", async () => {
         const img = button.querySelector("img");
+
+        const options = {
+            pixels: 64000,
+            distance: 0.21,
+            colorValidator: (red, green, blue, alpha = 255) => alpha > 250,
+            saturationDistance: 0.2,
+            lightnessDistance: 0.2,
+            hueDistance: 0.083333333,
+          };
   
         if (!img.complete) {
             alert("Image not fully loaded yet!");
@@ -10,8 +19,20 @@ document.querySelectorAll(".images").forEach(button => {
         }
     
         try {
-            const colors = await extractColors(img);
-            console.log("Extracted colors:", matchColors(colors));
+            const colors = await extractColors(img, options);
+            const result = matchColors(colors);
+            console.log(colors);
+            const outputDiv = document.getElementById("colorResults");
+            outputDiv.innerHTML = "";
+
+            for (const [colorName, meaning] of Object.entries(result)) {
+                const colorSection = document.createElement("div");
+                const vodou = matchVodou(colorName);
+                colorSection.innerHTML = `<strong>${colorName}</strong>: ${meaning} <strong>In Haitian Vodou</strong> ${vodou}`;
+                outputDiv.appendChild(colorSection);
+
+                outputDiv.appendChild(document.createElement("br"));
+            }
         } catch (error) {
             console.error("Color extraction failed:", error);
         }
@@ -27,27 +48,23 @@ function matchColors(colorsArr) {
         const b = color.blue;
 
         // Check if red
-        if (r >= 150 && r <= 255 && g <= 100 && b <= 100) {
+        if (r >= 150 && r <= 255 && g <= 160 && b <= 150) {
             colorsToMeaning["Red"] = ["Red is a powerful color representing strength, passion, and vitality."];
-            continue;
         }
 
         // Check if blue
         if (r <= 100 && g <= 245 && b >= 150 && b <= 255) {
             colorsToMeaning["Blue"] = ["Blue symbolizes peace and the spiritual realm."];
-            continue;
         }
 
         // Check if green
-        if (r <= 150 && g >= 100 && g <= 255 && b <= 150) {
+        if (r <= 150 && g >= 80 && g <= 255 && b <= 100) {
             colorsToMeaning["Green"] = ["Green represents life, growth, and nature. It symbolizes fertility and renewal and is often used in paintings depicting lush landscapes and agricultural scenes."];
-            continue;
         }
 
         // Check if yellow
-        if (r >= 200 && r <= 255 && g >= 200 && g <= 255 && b <= 100) {
+        if (r >= 190 && r <= 255 && g >= 170 && g <= 255 && b <= 234) {
             colorsToMeaning["Yellow"] = ["Yellow signifies happiness, energy, and the sun. It also symbolizes wealth and prosperity."];
-            continue;
         }
 
         // Check if black
@@ -64,4 +81,31 @@ function matchColors(colorsArr) {
     }
 
     return colorsToMeaning;
+}
+
+function matchVodou(color) {
+    switch (color) {
+        case "Red":
+            return `red ribbons are commonly used in Vodou rituals, 
+                    tied to trees to ward off illness or as part of offerings to specific lwa.
+                    Ezili Freda, the lwa of love and war, is often depicted in red.`;
+        case "Blue":
+            return `blue bodies of water are where Vodou rituals can commonly occur right by. 
+                    This is in honor of Agwe, the lwa of the sea, whom is associated with the color
+                    blue and sea-related symbols like shells and oars.`;
+        case "Green":
+            return `green imagery can be used to represent Grand Bois, a nature-oriented lwa closely
+                    associated with trees, plants, and herbs, which also serve as offerings in rituals.`;
+        case "Yellow":
+            return `yellow is used to invoke certain lwa and energies during rituals. This color also
+                    symbolizes the lwa of trade and commerce, Ayizan, who is known to grant wealth and success.`;
+        case "Black":
+            return `black is associated with the lwa of the dead. More specifically, Baron Samedi,
+                    the spirit of death and the underworld is often depicted in black, as a skeleton, or 
+                    in dark, burial attire. `;
+        case "White":
+            return `white clothing, offerings, and decorations are often used in Vodou ceremonies to create a sense
+                    of connection with the lwa. Unlike the other colors, white usually isn't
+                    tied to one specific lwa.`;
+    }
 }
