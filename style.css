@@ -1,5 +1,7 @@
 body {
     background-color: rgb(178, 211, 240);
+    opacity: 0;
+    transition: opacity 3s;
 }
 
 #header {
@@ -34,7 +36,6 @@ body {
 
 #header .desc {
     font-size: 20px;
-    font-family: "Poiret One", sans-serif;
     max-width: 910px;
     margin: 0 auto;
 }
@@ -59,37 +60,47 @@ body {
 }
 
 button:hover img {
-    filter: brightness(75%);
+    box-shadow: 10px 10px 8px rgb(128, 127, 127);
+    transform: scale(1.1);
 }
 
 button img {
     border: solid;
     border-width: 2px;
     border-radius: 5px;
+    box-shadow: 10px 10px 8px rgb(175, 175, 175);
 }
 
 #exampleImg1 img {
-    width: 200px;
-    margin-right: 20px;
+    width: 170px;
+    margin-right: 100px;
     height: auto;
     display: block;
 }
 
+#exampleImg1 p {
+    margin-right: 100px;
+}
+
 #exampleImg2 img {
-    width: 225px;
+    width: 195px;
     height: auto;
     display: block;
 }
 
 #exampleImg3 img {
-    width: 200px;
+    width: 170px;
     height: auto;
     display: block;
-    margin-right: 20px;
+    margin-right: 100px;
+}
+
+#exampleImg3 p {
+    margin-right: 100px;
 }
 
 #exampleImg4 img {
-    width: 225px;
+    width: 195px;
     height: auto;
     display: block;
 }
@@ -103,4 +114,41 @@ button img {
     border-bottom: 0;
     border-right: 0;
     height: 100%;
+}
+
+.output #colorResults {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+#preview img {
+    border: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    width: 65%;
+    margin-right: 20px;
+    height: auto;
+    display: block;
+}
+
+#preview:hover {
+    filter: brightness(75%);
+}
+
+.examples {
+    font-size: 18px;
+    font-family: "Poiret One", sans-serif;
+    max-width: 700px;
+    height: 650px;
+    margin: 0 auto;
+    background-color: aliceblue;
+    border-radius: 25px;
+    align-content: center;
 }

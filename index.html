@@ -6,7 +6,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Poiret+One&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body onload="document.body.style.opacity='1'">
         <section id="header">
             <div>
                 <h1>Haitian Artwork Analyzer</h1>
@@ -37,31 +37,35 @@
         <section id="inputSection">
             <div class="input">
                 <h1>Upload an image of Haitian art you found...</h1>
-                <button> Upload here! </button>
-                <h1>...or try it with any one of these popular pieces!</h1>
-                <button id="exampleImg1" class="images">
-                    <img src="haitian_artwork1" alt="Haitian Painting" />
-                    <p>"Mother with Children", 2001 <br>Louisiane Saint Fleurant</p>
-                </button>
-                <button id="exampleImg2" class="images">
-                    <img src="haitian_artwork3.jpeg" alt="Haitian Painting" />
-                    <p>"Baron-la-mer, n.d.", 1988 <br>Andre Pierre</p>
-                </button>
-                <br>
-                <button id="exampleImg3" class="images">
-                    <img src="haitian_artwork2.jpeg" alt="Haitian Painting" />
-                    <p>"Untitled" <br>Frantz Zephirin</p>
-                </button>
-                <button id="exampleImg4" class="images">
-                    <img src="haitian_artwork4.jpg" alt="Haitian Painting" />
-                    <p>"Défilée La Folle"<br>Ulrick Jean-Pierre</p>
-                </button>
+                <input type="file" id="imageUpload" accept="image/*" />
+                <div id="preview" class="images"></div>
+                <h1>...or try it with any of these popular pieces by clicking one!</h1>
+                <div class="examples">    
+                    <button id="exampleImg1" class="images">
+                        <img src="haitian_artwork1" alt="Haitian Painting" />
+                        <p>"Mother with Children", 2001 <br>Louisiane Saint Fleurant</p>
+                    </button>
+                    <button id="exampleImg2" class="images">
+                        <img src="haitian_artwork3.jpeg" alt="Haitian Painting" />
+                        <p>"Baron-la-mer, n.d.", 1988 <br>Andre Pierre</p>
+                    </button>
+                    <br>
+                    <button id="exampleImg3" class="images">
+                        <img src="haitian_artwork2.jpeg" alt="Haitian Painting" />
+                        <p>"Untitled" <br>Frantz Zephirin</p>
+                    </button>
+                    <button id="exampleImg4" class="images">
+                        <img src="haitian_artwork4.jpg" alt="Haitian Painting" />
+                        <p>"Défilée La Folle"<br>Ulrick Jean-Pierre</p>
+                    </button>
+                </div>
             </div>
         </section>
         <section>
             <div class="output">
-                <h1>Wait for your results here:</h1>
+                <h1>Wait for your color results here:</h1>
                 <div id="colorResults"></div>
+                <h2>See what potential objects and symbols in your painting could mean!</h2>
             </div>
         </section>
     <script type="module" src="scripts.js"></script>

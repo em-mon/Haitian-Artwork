@@ -1,42 +1,64 @@
 import { extractColors } from "https://cdn.skypack.dev/extract-colors";
 
+async function analyzeImage(img) {
+    const options = {
+        pixels: 64000,
+        distance: 0.21,
+        colorValidator: (red, green, blue, alpha = 255) => alpha > 250,
+        saturationDistance: 0.2,
+        lightnessDistance: 0.2,
+        hueDistance: 0.083333333,
+    };
+    
+    try {
+        const colors = await extractColors(img, options);
+        const result = matchColors(colors);
+        const outputDiv = document.getElementById("colorResults");
+        outputDiv.innerHTML = "";
+
+        for (const [colorName, meaning] of Object.entries(result)) {
+            const colorSection = document.createElement("div");
+            const vodou = matchVodou(colorName);
+            colorSection.innerHTML = `<strong>${colorName}</strong>: ${meaning} <strong>In Haitian Vodou</strong> ${vodou}`;
+            outputDiv.appendChild(colorSection);
+            outputDiv.appendChild(document.createElement("br"));
+        }
+    } catch (error) {
+        console.error("Color extraction failed:", error);
+    }
+}
+
 document.querySelectorAll(".images").forEach(button => {
     button.addEventListener("click", async () => {
         const img = button.querySelector("img");
-
-        const options = {
-            pixels: 64000,
-            distance: 0.21,
-            colorValidator: (red, green, blue, alpha = 255) => alpha > 250,
-            saturationDistance: 0.2,
-            lightnessDistance: 0.2,
-            hueDistance: 0.083333333,
-          };
-  
         if (!img.complete) {
             alert("Image not fully loaded yet!");
             return;
         }
-    
-        try {
-            const colors = await extractColors(img, options);
-            const result = matchColors(colors);
-            console.log(colors);
-            const outputDiv = document.getElementById("colorResults");
-            outputDiv.innerHTML = "";
 
-            for (const [colorName, meaning] of Object.entries(result)) {
-                const colorSection = document.createElement("div");
-                const vodou = matchVodou(colorName);
-                colorSection.innerHTML = `<strong>${colorName}</strong>: ${meaning} <strong>In Haitian Vodou</strong> ${vodou}`;
-                outputDiv.appendChild(colorSection);
-
-                outputDiv.appendChild(document.createElement("br"));
-            }
-        } catch (error) {
-            console.error("Color extraction failed:", error);
-        }
+        await analyzeImage(img); 
     });
+});
+
+const fileInput = document.getElementById("imageUpload");
+const preview = document.getElementById("preview");
+
+fileInput.addEventListener("change", () => {
+    const file = fileInput.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+        const img = new Image();
+        img.src = reader.result;
+
+        img.onload = () => {
+            preview.innerHTML = ""; 
+            preview.appendChild(img); 
+            analyzeImage(img); 
+        };
+    };
+    reader.readAsDataURL(file);
 });
 
 function matchColors(colorsArr) {
