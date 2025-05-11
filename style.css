@@ -1,12 +1,26 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: rgb(178, 211, 240);
     opacity: 0;
     transition: opacity 3s;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+    margin: 0;
 }
 
-#header {
-    margin-top: 2rem;
+#title {
+    height: 100vh;
+    align-content: center;
+    background-image: url(or.jpeg);
     text-align: center;
+}
+
+#title h1 {
+    color: rgba(96, 35, 2, 0.84);
 }
 
 #header h1 {
@@ -27,6 +41,26 @@ body {
     border-radius: 25px;
 }
 
+#arrow {
+    background-color: transparent;
+    border: none;
+    width: 80px;
+    height: 80px;
+    font-size: 60px;
+    margin-top: 100px;
+    cursor: pointer;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+#arrow img {
+    max-width: 300%; 
+    max-height: 300%; 
+    width: auto;
+    height: auto;
+}
+
 #header .quote h4 {
     font-size: 18px;
     font-family: "Poiret One", sans-serif;
@@ -38,6 +72,7 @@ body {
     font-size: 20px;
     max-width: 910px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .input {
@@ -49,7 +84,7 @@ body {
     width: 50%;
     border-bottom: 0;
     border-left: 0;
-    height: 100%;
+    height: 100vh;
 }
 
 .images {
@@ -59,12 +94,12 @@ body {
     cursor: pointer;
 }
 
-button:hover img {
+.images:hover img {
     box-shadow: 10px 10px 8px rgb(128, 127, 127);
     transform: scale(1.1);
 }
 
-button img {
+.images img {
     border: solid;
     border-width: 2px;
     border-radius: 5px;
@@ -113,7 +148,7 @@ button img {
     width: 50%;
     border-bottom: 0;
     border-right: 0;
-    height: 100%;
+    height: 100vh;
 }
 
 .output #colorResults {
@@ -132,8 +167,8 @@ button img {
     border: solid;
     border-width: 2px;
     border-radius: 5px;
-    width: 65%;
-    margin-right: 20px;
+    width: 34%;
+    margin-top: 10px;
     height: auto;
     display: block;
 }
@@ -151,4 +186,59 @@ button img {
     background-color: aliceblue;
     border-radius: 25px;
     align-content: center;
+}
+
+.upload {
+    padding: 15px;
+    background-color: rgb(61, 83, 103);
+    color: aliceblue;
+    border-radius: 25px;
+}
+
+.upload:hover {
+    filter: brightness(75%);
+    cursor: pointer;
+}
+
+.moreInfo {
+    border-radius: 100%;
+    position: fixed;
+    cursor: pointer;
+    animation: fadeInOut 3s infinite;
+    transition: background-color 0.3s;
+    width: 80px;
+    height: 80px;
+    font-size: 60px;
+    color: rgb(143, 26, 26);
+    background-color: rgb(233, 180, 180);
+    font-weight: bold;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.moreInfo p {
+    font-size: 15px;
+}
+
+.output p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
 }
