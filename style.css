@@ -10,6 +10,7 @@ body {
     flex-direction: column;
     height: 100vh; 
     margin: 0;
+    font-family: "Quicksand", sans-serif;
 }
 
 #title {
@@ -79,12 +80,10 @@ body {
     position: absolute;
     font-size: 18px;
     text-align: center;
-    border-style: solid;
     float: left;
     width: 50%;
-    border-bottom: 0;
-    border-left: 0;
-    height: 100vh;
+    border-top:solid;
+    min-height: 810px;
 }
 
 .images {
@@ -143,12 +142,11 @@ body {
 .output {
     font-size: 18px;
     text-align: center;
-    border-style: solid;
     float: right;
     width: 50%;
-    border-bottom: 0;
-    border-right: 0;
-    height: 100vh;
+    border-top:solid;
+    min-height: 856px;
+    position: relative;
 }
 
 .output #colorResults {
@@ -167,9 +165,9 @@ body {
     border: solid;
     border-width: 2px;
     border-radius: 5px;
-    width: 34%;
+    height: 200px;
     margin-top: 10px;
-    height: auto;
+    width: auto;
     display: block;
 }
 
@@ -193,6 +191,7 @@ body {
     background-color: rgb(61, 83, 103);
     color: aliceblue;
     border-radius: 25px;
+    font-family: "Poiret One", sans-serif;
 }
 
 .upload:hover {
@@ -212,6 +211,7 @@ body {
     color: rgb(143, 26, 26);
     background-color: rgb(233, 180, 180);
     font-weight: bold;
+    z-index: 10;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -234,11 +234,40 @@ body {
 }
 
 footer {
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: red;
-    color: white;
+    background-color: rgba(15, 46, 74, 0.45);
     text-align: center;
+    color: aliceblue;
+}
+
+.links {
+    text-align: center;
+    display:block;
+    border-top: solid;
+    position: relative;
+    margin-top: 200px;
+    max-width: 910px;
+    margin-left: 20%;
+}
+
+#arrow2 {
+    background-color: transparent;
+    border: none;
+    width: 80px;
+    height: auto;
+    font-size: 60px;
+    cursor: pointer;
+    margin-left: 43%;
+    position: absolute;
+    z-index: 10;
+}
+
+#arrow2 img {
+    max-width: 300%; 
+    max-height: 300%; 
+    width: auto;
+    height: auto;
+}
+
+#art {
+    font-family: "Poiret One", sans-serif;
 }

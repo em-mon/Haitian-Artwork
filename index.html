@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Poiret+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Poiret+One&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">    
     </head>
     <body onload="document.body.style.opacity='1'">
         <button class="moreInfo"> <p>More coming soon!</p></button>
@@ -39,6 +39,9 @@
             </div>
         </section>
         <section id="inputSection">
+            <button id="arrow2" onclick="window.location.href='#links'">
+                <img src="image.png" alt="Scroll down" />
+            </button>
             <div class="input">
                 <h1>Upload an image of Haitian art you found...</h1>
                 <label for="imageUpload" class="upload">Upload here!</label>
@@ -48,20 +51,20 @@
                 <div class="examples">    
                     <button id="exampleImg1" class="images">
                         <img src="haitian_artwork1" alt="Haitian Painting" />
-                        <p>"Mother with Children", 2001 <br>Louisiane Saint Fleurant</p>
+                        <p id="art">"Mother with Children", 2001 <br>Louisiane Saint Fleurant</p>
                     </button>
                     <button id="exampleImg2" class="images">
                         <img src="haitian_artwork3.jpeg" alt="Haitian Painting" />
-                        <p>"Baron-la-mer, n.d.", 1988 <br>Andre Pierre</p>
+                        <p id="art">"Baron-la-mer, n.d.", 1988 <br>Andre Pierre</p>
                     </button>
                     <br>
                     <button id="exampleImg3" class="images">
                         <img src="haitian_artwork2.jpeg" alt="Haitian Painting" />
-                        <p>"Untitled" <br>Frantz Zephirin</p>
+                        <p id="art">"Untitled" <br>Frantz Zephirin</p>
                     </button>
                     <button id="exampleImg4" class="images">
                         <img src="haitian_artwork4.jpg" alt="Haitian Painting" />
-                        <p>"Défilée La Folle"<br>Ulrick Jean-Pierre</p>
+                        <p id="art">"Défilée La Folle"<br>Ulrick Jean-Pierre</p>
                     </button>
                 </div>
             </div>
@@ -70,6 +73,10 @@
             <div class="output">
                 <h1>Wait for your color results here:</h1>
                 <div id="colorResults"></div>
+            </div>
+        </section>
+        <section>
+            <div class="links" id="links">
                 <h2>See what potential objects and symbols in your painting could mean!</h2>
                 <p>
                     <a href="https://en.wikipedia.org/wiki/Lwa#:~:text=Lwa%2C%20also%20called%20loa%2C%20are,(horse)%20of%20the%20lwa." target="_blank">
@@ -98,14 +105,13 @@
                     <a href="https://www.naderhaitianart.com/blogs/news/how-haitian-art-reflects-life-and-spirituality#:~:text=Haitian%20artists%20often%20use%20symbols,on%20different%20aspects%20of%20life." target="_blank">
                     here.</a>
                 </p>
-
             </div>
         </section>
-    <script type="module" src="scripts.js"></script>
         <footer>
             <div class="footer-content">
-                <p>&copy; 2025 Your Website Name. All rights reserved.</p>
+                <p>&copy; 2025 Haitian Artwork Analyzer Project // AAAS 355</p>
             </div>
         </footer>
+    <script type="module" src="scripts.js"></script>
     </body>
 </html>
